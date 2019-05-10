@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include "Game.cpp"
+#include <SFML/OpenGL.hpp>
+#include "Game.hpp"
 
 int main() {
   Game game;

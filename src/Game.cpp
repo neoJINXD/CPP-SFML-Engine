@@ -1,8 +1,6 @@
 #include "Game.hpp"
 
-Game::Game() {
-  win = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Tilt");
-}
+Game::Game() { win = new sf::RenderWindow(sf::VideoMode(1200, 1200), "Tilt"); }
 
 Game::~Game() {}
 
