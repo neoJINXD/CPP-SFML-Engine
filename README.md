@@ -1,6 +1,8 @@
-# SFML based game engine made in C++
+# SFML Game Engine in C++
 
-## Base game engine to make C++ games from
+## Base game engine to make games in C++
+
+---
 
 ---
 
