@@ -8,7 +8,7 @@ CC := g++
 CPPFLAGS := -c -Wall
 SFML := -IC:/SFML-2.5.1/include -LC:/SFML-2.5.1/lib -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network -lopengl32
 
-all: sfml.exe
+all: clean sfml.exe
 
 sfml.exe : ${OBJ_FILES}
 	${CC} -g -o build/$@ $^ ${SFML}
@@ -28,5 +28,7 @@ ${OBJ_DIR}/%.o : ${SRC_DIR}/%.cpp
 # 	${CC} ${CPPFLAGS} src/Game.cpp -o build/obj/Game.o ${SFML}
 
 
+# clean:
+# 	del ${OBJ_DIR}/*.o
 clean:
-	del ${OBJ_DIR}/*.o
+	del /s *.o
