@@ -13,7 +13,6 @@
   - In Game
   - Pause Menu
   - End Screen
-  - Leaderboard Integration?
 - UI
   - Buttons to move between states
   - Options menu?
@@ -22,6 +21,7 @@
   - Perlin Noise for Generation
 - Audio
   - Button 'click' sounds
+  - Music player
 - Other
   - Base for Player Control
   - Implement a stack for Game States?
