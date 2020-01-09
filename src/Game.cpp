@@ -9,7 +9,7 @@ Game::~Game() {}
 void Game::loop() {
   sf::Font *font = new sf::Font();
   font->loadFromFile("../resources/Blacklisted.ttf");
-  sf::Text *txt = new sf::Text("OK BOOMER", *font, 100);
+  sf::Text *txt = new sf::Text("REEEEE", *font, 100);
   txt->setPosition(400, 400);
 
   while (win->isOpen()) {
