@@ -1,10 +1,17 @@
 #include "Game.hpp"
 
-Game::Game() { win = new sf::RenderWindow(sf::VideoMode(1200, 1200), "Tilt"); }
+Game::Game() {
+  win = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Tilt");
+}
 
 Game::~Game() {}
 
 void Game::loop() {
+  sf::Font *font = new sf::Font();
+  font->loadFromFile("../resources/Blacklisted.ttf");
+  sf::Text *txt = new sf::Text("OK BOOMER", *font, 100);
+  txt->setPosition(400, 400);
+
   while (win->isOpen()) {
     sf::Event event;
 
@@ -19,8 +26,10 @@ void Game::loop() {
     // update
     win->clear(background);
     // win->draw(shape);
+    win->draw(*txt);
 
     // render
     win->display();
   }
+  // Kill game
 }

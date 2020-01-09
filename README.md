@@ -8,6 +8,8 @@
 
 ### TODO
 
+Essentials
+
 - Setting up Game state system
   - Main Menu
   - In Game
@@ -19,11 +21,11 @@
 - Helper
   - FPS Counter
   - Perlin Noise for Generation
+
+Future
+
 - Audio
   - Button 'click' sounds
   - Music player
-- Other
-  - Base for Player Control
-  - Implement a stack for Game States?
 
 ---
