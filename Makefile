@@ -7,6 +7,7 @@ CC := g++
 
 CPPFLAGS := -c -Wall
 SFML := -IC:/SFML-2.5.1/include -LC:/SFML-2.5.1/lib -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network -lopengl32
+WSL_SFML := -I/mnt/c/SFML-2.5.1/include -L/mnt/c/SFML-2.5.1/lib -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network -lopengl32
 
 all: clean sfml.exe
 
@@ -32,3 +33,5 @@ ${OBJ_DIR}/%.o : ${SRC_DIR}/%.cpp
 # 	del ${OBJ_DIR}/*.o
 clean:
 	del /s *.o
+
+create:
