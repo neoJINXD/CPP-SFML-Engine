@@ -4,11 +4,14 @@ Game::Game() {
   win = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Tilt");
 }
 
-Game::~Game() {}
+Game::~Game() {
+    delete win;
+    win = nullptr;
+}
 
 void Game::loop() {
   sf::Font *font = new sf::Font();
-  font->loadFromFile("../resources/Blacklisted.ttf");
+  font->loadFromFile("resources/Blacklisted.ttf");
   sf::Text *txt = new sf::Text("REEEEE", *font, 100);
   txt->setPosition(400, 400);
 

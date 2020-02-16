@@ -152,6 +152,9 @@
     <ClInclude Include="src\GameStateSystem\BaseState.h" />
     <ClInclude Include="src\GameStateSystem\Menu.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="resources\Blacklisted.ttf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
