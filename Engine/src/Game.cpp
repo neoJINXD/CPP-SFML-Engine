@@ -1,23 +1,23 @@
 #include "Game.h"
 
-void Game::init()
+void engine::Game::init()
 {
 	this->win = new sf::RenderWindow(sf::VideoMode(HEIGHT, WIDTH), "Title", sf::Style::Close | sf::Style::Titlebar);
 }
 
-Game::Game() 
+engine::Game::Game() 
 {
 	this->init();
 }
 
-Game::~Game() 
+engine::Game::~Game() 
 {
 	delete win;
 	win = nullptr;
 }
 
 
-void Game::update()
+void engine::Game::update()
 {
     // polling sfml events
     while (win->pollEvent(pollingEvnt)) {
@@ -27,7 +27,7 @@ void Game::update()
     }
 }
 
-void Game::render()
+void engine::Game::render()
 {
     // clears current buffer
     win->clear(background);
@@ -39,9 +39,10 @@ void Game::render()
     win->display();
 }
 
-void Game::loop()
+void engine::Game::loop()
 {
     while (win->isOpen()) {
+        dt = dtClock.restart().asSeconds();
         this->update();
         this->render();
     }

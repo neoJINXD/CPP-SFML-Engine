@@ -7,28 +7,37 @@
 #include <SFML/Network.hpp>
 #include <SFML/OpenGL.hpp>
 
-class Game {
-private:
-      const int HEIGHT = 1280;
-      const int WIDTH = 720;
-      const sf::Color background = sf::Color::Cyan;
 
-      sf::RenderWindow *win;
-      sf::Event pollingEvnt;
+namespace engine
+{
+    class Game {
+    private:
+          const int HEIGHT = 1280;
+          const int WIDTH = 720;
+          const sf::Color background = sf::Color::Cyan;
 
-      void init();
+          sf::RenderWindow *win;
+          sf::Event pollingEvnt;
+
+          // time elapsed for framerate independance
+          sf::Clock dtClock;
+          float dt;
+
+          void init();
  
 
-public:
+    public:
 
-      Game();
-      ~Game();
+          Game();
+          ~Game();
 
 
-      void preload();
-      void setup();
-      void update();
-      void render();
+          void preload();
+          void setup();
+          void update();
+          void render();
 
-      void loop();
-};
+          void loop();
+    };
+
+}

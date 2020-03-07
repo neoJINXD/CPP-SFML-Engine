@@ -24,7 +24,7 @@ int main() {
     //triangle[1].color = sf::Color::Blue;
     //triangle[2].color = sf::Color::Green;
 
-    Game gam;
+    engine::Game gam;
     gam.loop();
 
     return 0;
