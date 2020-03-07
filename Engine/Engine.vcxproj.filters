@@ -21,9 +21,6 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameStateSystem\Base.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\UI\Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -36,15 +33,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameStateSystem\Base.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameStateSystem\BaseState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameStateSystem\Menu.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\UI\Button.h">

@@ -144,7 +144,6 @@
     <ClCompile Include="src\GameStateSystem\InGame.cpp" />
     <ClCompile Include="src\UI\Button.cpp" />
     <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\GameStateSystem\Base.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\GameStateSystem\State.cpp" />
   </ItemGroup>
@@ -152,9 +151,6 @@
     <ClInclude Include="src\GameStateSystem\InGame.h" />
     <ClInclude Include="src\UI\Button.h" />
     <ClInclude Include="src\Game.h" />
-    <ClInclude Include="src\GameStateSystem\Base.h" />
-    <ClInclude Include="src\GameStateSystem\BaseState.h" />
-    <ClInclude Include="src\GameStateSystem\Menu.hpp" />
     <ClInclude Include="src\GameStateSystem\State.h" />
   </ItemGroup>
   <ItemGroup>

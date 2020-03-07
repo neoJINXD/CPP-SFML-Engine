@@ -29,12 +29,23 @@ void engine::Game::update()
 {
     // polling sfml events
     while (win->pollEvent(pollingEvnt)) {
-        if (pollingEvnt.type == sf::Event::Closed || pollingEvnt.key.code == sf::Keyboard::Escape) {
+        if (pollingEvnt.type == sf::Event::Closed) {
             win->close();
         }
     }
     if (!states.empty())
+    {
         states.top()->update(dt);
+        if (states.top()->getEnd())
+        {
+            states.top()->quit();
+            delete states.top();
+            states.pop();
+        }
+    }
+    else {
+        win->close();
+    }
 }
 
 void engine::Game::render()
