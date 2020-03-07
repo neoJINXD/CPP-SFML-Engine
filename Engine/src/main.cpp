@@ -27,5 +27,6 @@ int main() {
     engine::Game gam;
     gam.loop();
 
+    system("pause");
     return 0;
 }
