@@ -3,6 +3,7 @@
 void engine::Game::init()
 {
 	this->win = new sf::RenderWindow(sf::VideoMode(HEIGHT, WIDTH), "Title", sf::Style::Close | sf::Style::Titlebar);
+    this->states.push(new statesystem::InGame(win));
 }
 
 engine::Game::Game() 
@@ -14,6 +15,13 @@ engine::Game::~Game()
 {
 	delete win;
 	win = nullptr;
+
+    while (!states.empty())
+    {
+        delete states.top();
+        states.pop();
+
+    }
 }
 
 
@@ -25,6 +33,8 @@ void engine::Game::update()
             win->close();
         }
     }
+    if (!states.empty())
+        states.top()->update(dt);
 }
 
 void engine::Game::render()
@@ -34,6 +44,8 @@ void engine::Game::render()
 
     // render items
     //win.draw(triangle);
+    if (!states.empty())
+        states.top()->render(win);
 
     // swaps buffers
     win->display();

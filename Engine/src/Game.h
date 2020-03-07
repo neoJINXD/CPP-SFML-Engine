@@ -7,6 +7,9 @@
 #include <SFML/Network.hpp>
 #include <SFML/OpenGL.hpp>
 
+#include <stack>
+
+#include "GameStateSystem/InGame.h"
 
 namespace engine
 {
@@ -22,6 +25,8 @@ namespace engine
           // time elapsed for framerate independance
           sf::Clock dtClock;
           float dt;
+
+          std::stack<statesystem::State*> states;
 
           void init();
  
