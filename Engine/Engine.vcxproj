@@ -141,12 +141,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\UI\Button.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameStateSystem\Base.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\UI\Button.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\GameStateSystem\Base.h" />
     <ClInclude Include="src\GameStateSystem\BaseState.h" />

@@ -1,19 +1,34 @@
-#ifndef GAME_HPP
-#define GAME_HPP
+#pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/Network.hpp>
+#include <SFML/OpenGL.hpp>
 
 class Game {
- public:
-  Game();
-  ~Game();
-  void loop();
+private:
+      const int HEIGHT = 1280;
+      const int WIDTH = 720;
+      const sf::Color background = sf::Color::Cyan;
 
- private:
-  const int HEIGHT = 800;
-  const int WIDTH = 800;
-  sf::RenderWindow *win;
-  const sf::Color background = sf::Color::Cyan;
+      sf::RenderWindow *win;
+      sf::Event pollingEvnt;
+
+      void init();
+ 
+
+public:
+
+      Game();
+      ~Game();
+
+
+      void preload();
+      void setup();
+      void update();
+      void render();
+
+      void loop();
 };
-
-#endif

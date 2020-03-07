@@ -1,38 +1,50 @@
 #include "Game.h"
 
-Game::Game() {
-  win = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Tilt");
+void Game::init()
+{
+	this->win = new sf::RenderWindow(sf::VideoMode(HEIGHT, WIDTH), "Title", sf::Style::Close | sf::Style::Titlebar);
 }
 
-Game::~Game() {
-    delete win;
-    win = nullptr;
+Game::Game() 
+{
+	this->init();
 }
 
-void Game::loop() {
-  sf::Font *font = new sf::Font();
-  font->loadFromFile("resources/Blacklisted.ttf");
-  sf::Text *txt = new sf::Text("REEEEE", *font, 100);
-  txt->setPosition(400, 400);
+Game::~Game() 
+{
+	delete win;
+	win = nullptr;
+}
 
-  while (win->isOpen()) {
-    sf::Event event;
 
-    while (win->pollEvent(event)) {
-      if (event.type == sf::Event::Closed) win->close();
-
-      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-        win->close();
-      }
+void Game::update()
+{
+    // polling sfml events
+    while (win->pollEvent(pollingEvnt)) {
+        if (pollingEvnt.type == sf::Event::Closed || pollingEvnt.key.code == sf::Keyboard::Escape) {
+            win->close();
+        }
     }
-
-    // update
-    win->clear(background);
-    // win->draw(shape);
-    win->draw(*txt);
-
-    // render
-    win->display();
-  }
-  // Kill game
 }
+
+void Game::render()
+{
+    // clears current buffer
+    win->clear(background);
+
+    // render items
+    //win.draw(triangle);
+
+    // swaps buffers
+    win->display();
+}
+
+void Game::loop()
+{
+    while (win->isOpen()) {
+        this->update();
+        this->render();
+    }
+}
+
+
