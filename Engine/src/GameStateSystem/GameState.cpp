@@ -44,6 +44,7 @@ void statesystem::GameState::quit()
 
 void statesystem::GameState::update(const float& dt)
 {
+	updateMousePos();
 	updateInputs(dt);
 	player.update(dt);
 	//std::cout << "We In the game" << std::endl;

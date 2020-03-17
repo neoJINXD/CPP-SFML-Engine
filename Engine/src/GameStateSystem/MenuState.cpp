@@ -39,8 +39,17 @@ void statesystem::MenuState::quit()
 
 void statesystem::MenuState::update(const float& dt)
 {
+	updateMousePos();
 	updateInputs(dt);
 	printf("We In the menu\n");
+	printf("We have ScreenPos (%i, %i)\nWe have WindowPos (%i, %i)\nWe have ViewPos (%i, %i)\n",
+		mousePosScreen.x,
+		mousePosScreen.y,
+		mousePosWindow.x,
+		mousePosWindow.y,
+		mousePosView.x,
+		mousePosView.y);
+	system("cls");
 }
 
 void statesystem::MenuState::render(sf::RenderTarget* target)

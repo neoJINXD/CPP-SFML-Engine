@@ -23,3 +23,10 @@ void statesystem::State::checkEnd()
 		ended = true;
 }
 
+void statesystem::State::updateMousePos()
+{
+	mousePosScreen = sf::Mouse::getPosition();
+	mousePosWindow = sf::Mouse::getPosition(*win);
+	mousePosView = win->mapPixelToCoords(sf::Mouse::getPosition(*win));
+}
+

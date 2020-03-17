@@ -141,15 +141,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\GameStateSystem\InGame.cpp" />
     <ClCompile Include="src\UI\Button.cpp" />
+    <ClCompile Include="src\GameStateSystem\MenuState.cpp" />
+    <ClCompile Include="src\Entities\Entity.cpp" />
+    <ClCompile Include="src\GameStateSystem\GameState.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\GameStateSystem\State.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\GameStateSystem\InGame.h" />
     <ClInclude Include="src\UI\Button.h" />
+    <ClInclude Include="src\GameStateSystem\MenuState.h" />
+    <ClInclude Include="src\Entities\Entity.h" />
+    <ClInclude Include="src\GameStateSystem\GameState.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\GameStateSystem\State.h" />
   </ItemGroup>
