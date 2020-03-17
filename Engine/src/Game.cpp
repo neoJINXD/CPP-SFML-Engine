@@ -2,13 +2,20 @@
 
 void engine::Game::init()
 {
-	this->win = new sf::RenderWindow(sf::VideoMode(HEIGHT, WIDTH), "Title", sf::Style::Close | sf::Style::Titlebar);
-    this->states.push(new statesystem::InGame(win));
+	win = new sf::RenderWindow(sf::VideoMode(HEIGHT, WIDTH), "Title", sf::Style::Close | sf::Style::Titlebar);
+
+    validKeys["Escape"] = sf::Keyboard::Key::Escape;
+    validKeys["W"] = sf::Keyboard::Key::W;
+    validKeys["A"] = sf::Keyboard::Key::A;
+    validKeys["S"] = sf::Keyboard::Key::S;
+    validKeys["D"] = sf::Keyboard::Key::D;
+
+    states.push(new statesystem::GameState(win, &validKeys));
 }
 
 engine::Game::Game() 
 {
-	this->init();
+	init();
 }
 
 engine::Game::~Game() 
@@ -24,6 +31,11 @@ engine::Game::~Game()
     }
 }
 
+
+void engine::Game::quitWindow()
+{
+    printf("Ending Program\n");
+}
 
 void engine::Game::update()
 {
@@ -44,6 +56,7 @@ void engine::Game::update()
         }
     }
     else {
+        quitWindow();
         win->close();
     }
 }
@@ -66,8 +79,8 @@ void engine::Game::loop()
 {
     while (win->isOpen()) {
         dt = dtClock.restart().asSeconds();
-        this->update();
-        this->render();
+        update();
+        render();
     }
 }
 

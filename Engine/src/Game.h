@@ -8,8 +8,9 @@
 #include <SFML/OpenGL.hpp>
 
 #include <stack>
+#include <map>
 
-#include "GameStateSystem/InGame.h"
+#include "GameStateSystem/GameState.h"
 
 namespace engine
 {
@@ -28,6 +29,8 @@ namespace engine
 
           std::stack<statesystem::State*> states;
 
+          std::map<std::string, int> validKeys;
+
           void init();
  
 
@@ -39,6 +42,8 @@ namespace engine
 
           void preload();
           void setup();
+
+          void quitWindow();
 
           void update();
           void render();
