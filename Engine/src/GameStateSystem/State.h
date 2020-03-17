@@ -3,6 +3,7 @@
 #include <vector>
 //#include <map>
 #include <SFML/Graphics.hpp>
+#include "../Entities/Entity.h"
 
 namespace statesystem 
 {

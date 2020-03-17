@@ -11,6 +11,7 @@
 #include <map>
 
 #include "GameStateSystem/GameState.h"
+#include "GameStateSystem/MenuState.h"
 
 namespace engine
 {
