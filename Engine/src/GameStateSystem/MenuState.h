@@ -9,8 +9,12 @@ namespace statesystem
 	{
 	private:
 		sf::RectangleShape bgd;
+		sf::Font font;
+
+		ui::Button* testBTN;
 
 		void initKeybinds();
+		void init();
 
 	public:
 		MenuState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys);

@@ -11,16 +11,30 @@ void statesystem::MenuState::initKeybinds()
 
 }
 
+void statesystem::MenuState::init()
+{
+	if (!font.loadFromFile("resources/fonts/Blacklisted.ttf"))
+	{
+		printf("ERROR::MENUSTATE - FAILED TO LOAD FONT");
+		exit(-1);
+	}
+}
+
 statesystem::MenuState::MenuState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys) : State(_win, _validKeys)
 {
 	bgd.setSize(sf::Vector2f(win->getSize()));
 	bgd.setFillColor(sf::Color::White);
 
 	initKeybinds();
+	init();
+
+	testBTN = new ui::Button(100, 100, 1150, 50, &font, "Test");
 }
 
 statesystem::MenuState::~MenuState()
 {
+	delete testBTN;
+	testBTN = nullptr;
 }
 
 void statesystem::MenuState::updateInputs(const float& dt)
@@ -41,6 +55,9 @@ void statesystem::MenuState::update(const float& dt)
 {
 	updateMousePos();
 	updateInputs(dt);
+
+	testBTN->update(mousePosView);
+
 	printf("We In the menu\n");
 	printf("We have ScreenPos (%i, %i)\nWe have WindowPos (%i, %i)\nWe have ViewPos (%i, %i)\n",
 		mousePosScreen.x,
@@ -57,5 +74,6 @@ void statesystem::MenuState::render(sf::RenderTarget* target)
 	// render all items
 	if (!target)
 		target = win;
-	target->draw(bgd);
+	//target->draw(bgd);
+	testBTN->render(target);
 }

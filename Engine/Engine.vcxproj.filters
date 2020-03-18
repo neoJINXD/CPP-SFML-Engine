@@ -58,7 +58,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="resources\Blacklisted.ttf">
+    <Font Include="resources\fonts\Blacklisted.ttf">
       <Filter>Resource Files</Filter>
     </Font>
   </ItemGroup>
