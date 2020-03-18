@@ -3,11 +3,19 @@
 
 namespace ui 
 {
-	enum BTN_STATE {
+	enum BTN_STATE 
+	{
 		BTN_IDLE = 0,
 		BTN_HOVERED,
 		BTN_CLICK
 	};
+
+	enum RENDER_TYPE
+	{
+		TOP_LEFT = 0,
+		CENTER
+	};
+
 	class Button
 	{
 	private:
@@ -28,7 +36,8 @@ namespace ui
 			float width, 
 			float height, 
 			sf::Font* _font, 
-			std::string _text
+			std::string _text,
+			RENDER_TYPE _type = TOP_LEFT
 			);
 		~Button();
 

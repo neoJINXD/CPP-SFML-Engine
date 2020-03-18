@@ -6,11 +6,11 @@ ui::Button::Button(
 	float width, 
 	float height, 
 	sf::Font* _font, 
-	std::string _text)
+	std::string _text,
+	RENDER_TYPE _type)
 {
 	state = BTN_IDLE;
 
-	button.setPosition(sf::Vector2f(x, y));
 	button.setSize(sf::Vector2f(width, height));
 
 	font = _font;
@@ -18,6 +18,12 @@ ui::Button::Button(
 	txt.setString(_text);
 	txt.setFillColor(sf::Color::Black);
 	txt.setCharacterSize(24);
+
+	if (_type == TOP_LEFT)
+		button.setPosition(sf::Vector2f(x, y));
+	else
+		button.setPosition(sf::Vector2f(x - button.getSize().x / 2.f, y - button.getSize().y / 2.f));
+	
 	txt.setPosition(sf::Vector2f(
 		button.getPosition().x + button.getSize().x / 2.f - txt.getGlobalBounds().width / 2.f,
 		button.getPosition().y + button.getSize().y / 2.f - txt.getGlobalBounds().height / 2.f

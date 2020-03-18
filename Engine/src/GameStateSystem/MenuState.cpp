@@ -20,8 +20,9 @@ void statesystem::MenuState::init()
 	}
 
 	buttons["TEST"] = new ui::Button(100, 100, 1150, 50, &font, "Test");
-	buttons["EXIT"] = new ui::Button(650, 650, 150, 50, &font, "EXIT");
-	buttons["PLAY"] = new ui::Button(650, 590, 250, 50, &font, "Enter the Game");
+	float middle = win->getSize().x / 2.f;
+	buttons["EXIT"] = new ui::Button(middle, 650, 150, 50, &font, "EXIT", ui::CENTER);
+	buttons["PLAY"] = new ui::Button(middle, 590, 250, 50, &font, "Enter the Game", ui::CENTER);
 }
 
 statesystem::MenuState::MenuState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys) : State(_win, _validKeys)
