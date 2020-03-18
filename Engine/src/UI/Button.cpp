@@ -23,7 +23,7 @@ ui::Button::Button(
 		button.getPosition().y + button.getSize().y / 2.f - txt.getGlobalBounds().height / 2.f
 	));
 
-	normal = sf::Color(86, 86, 86);
+	normal = sf::Color(100, 100, 100);
 	highlighted = sf::Color(201, 201, 201);
 	click = sf::Color(20, 20, 20);
 

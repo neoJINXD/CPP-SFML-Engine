@@ -10,9 +10,9 @@ namespace statesystem
 	class State
 	{
 	private:
-		bool ended;
 
 	protected:
+		bool ended;
 		sf::RenderWindow* win;
 		std::vector<sf::Texture*> textures;
 

@@ -18,6 +18,10 @@ void statesystem::MenuState::init()
 		printf("ERROR::MENUSTATE - FAILED TO LOAD FONT");
 		exit(-1);
 	}
+
+	buttons["TEST"] = new ui::Button(100, 100, 1150, 50, &font, "Test");
+	buttons["EXIT"] = new ui::Button(650, 650, 150, 50, &font, "EXIT");
+	buttons["PLAY"] = new ui::Button(650, 590, 250, 50, &font, "Enter the Game");
 }
 
 statesystem::MenuState::MenuState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys) : State(_win, _validKeys)
@@ -27,14 +31,15 @@ statesystem::MenuState::MenuState(sf::RenderWindow* _win, std::map<std::string, 
 
 	initKeybinds();
 	init();
-
-	testBTN = new ui::Button(100, 100, 1150, 50, &font, "Test");
 }
 
 statesystem::MenuState::~MenuState()
 {
-	delete testBTN;
-	testBTN = nullptr;
+
+	for (auto &i : buttons)
+	{
+		delete i.second;
+	}
 }
 
 void statesystem::MenuState::updateInputs(const float& dt)
@@ -56,7 +61,14 @@ void statesystem::MenuState::update(const float& dt)
 	updateMousePos();
 	updateInputs(dt);
 
-	testBTN->update(mousePosView);
+	for (auto &i : buttons)
+	{
+		i.second->update(mousePosView);
+	}
+
+	if (buttons["EXIT"]->isPressed())
+		ended = true;
+		
 
 	printf("We In the menu\n");
 	printf("We have ScreenPos (%i, %i)\nWe have WindowPos (%i, %i)\nWe have ViewPos (%i, %i)\n",
@@ -75,5 +87,8 @@ void statesystem::MenuState::render(sf::RenderTarget* target)
 	if (!target)
 		target = win;
 	//target->draw(bgd);
-	testBTN->render(target);
+	for (auto &i : buttons)
+	{
+		i.second->render(target);
+	}
 }

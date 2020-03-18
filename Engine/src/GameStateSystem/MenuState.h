@@ -10,8 +10,9 @@ namespace statesystem
 	private:
 		sf::RectangleShape bgd;
 		sf::Font font;
+		std::map<std::string, ui::Button*> buttons;
 
-		ui::Button* testBTN;
+		//ui::Button* testBTN;
 
 		void initKeybinds();
 		void init();
