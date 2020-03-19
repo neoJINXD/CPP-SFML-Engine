@@ -11,7 +11,7 @@ void statesystem::GameState::initKeybinds()
 
 }
 
-statesystem::GameState::GameState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys) : State(_win, _validKeys)
+statesystem::GameState::GameState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys, std::stack<State*>* _states) : State(_win, _validKeys, _states)
 {
 	initKeybinds();
 }

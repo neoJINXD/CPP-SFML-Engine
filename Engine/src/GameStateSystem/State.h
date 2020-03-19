@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-//#include <map>
+#include <stack>
 #include <SFML/Graphics.hpp>
 #include "../Entities/Entity.h"
 
@@ -12,6 +12,7 @@ namespace statesystem
 	private:
 
 	protected:
+		std::stack<State*>* states;
 		bool ended;
 		sf::RenderWindow* win;
 		std::vector<sf::Texture*> textures;
@@ -26,7 +27,7 @@ namespace statesystem
 		virtual void initKeybinds() = 0;
 
 	public:
-		State(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys);
+		State(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys, std::stack<State*>* _states);
 		virtual ~State();
 
 		const bool& getEnd() const;

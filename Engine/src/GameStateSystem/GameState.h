@@ -12,7 +12,7 @@ namespace statesystem
 		void initKeybinds();
 
 	public:
-		GameState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys);
+		GameState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys, std::stack<State*>* _states);
 		virtual ~GameState();
 
 

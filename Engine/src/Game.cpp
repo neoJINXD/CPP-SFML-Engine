@@ -10,8 +10,8 @@ void engine::Game::init()
     validKeys["S"] = sf::Keyboard::Key::S;
     validKeys["D"] = sf::Keyboard::Key::D;
 
-    //states.push(new statesystem::GameState(win, &validKeys));
-    states.push(new statesystem::MenuState(win, &validKeys));
+    //states.push(new statesystem::GameState(win, &validKeys, &states));
+    states.push(new statesystem::MenuState(win, &validKeys, &states));
 }
 
 engine::Game::Game() 

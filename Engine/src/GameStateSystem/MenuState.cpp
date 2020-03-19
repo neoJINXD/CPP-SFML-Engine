@@ -1,5 +1,6 @@
 #include "MenuState.h"
 #include <stdio.h>
+#include "GameState.h"
 
 void statesystem::MenuState::initKeybinds()
 {
@@ -25,7 +26,7 @@ void statesystem::MenuState::init()
 	buttons["PLAY"] = new ui::Button(middle, 590, 250, 50, &font, "Enter the Game", ui::CENTER);
 }
 
-statesystem::MenuState::MenuState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys) : State(_win, _validKeys)
+statesystem::MenuState::MenuState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys, std::stack<State*>* _states) : State(_win, _validKeys, _states)
 {
 	bgd.setSize(sf::Vector2f(win->getSize()));
 	bgd.setFillColor(sf::Color::White);
@@ -70,6 +71,8 @@ void statesystem::MenuState::update(const float& dt)
 	if (buttons["EXIT"]->isPressed())
 		ended = true;
 		
+	if (buttons["PLAY"]->isPressed())
+		states->push(new statesystem::GameState(win, validKeys, states));
 
 	printf("We In the menu\n");
 	printf("We have ScreenPos (%i, %i)\nWe have WindowPos (%i, %i)\nWe have ViewPos (%i, %i)\n",

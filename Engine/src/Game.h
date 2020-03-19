@@ -41,9 +41,6 @@ namespace engine
           ~Game();
 
 
-          void preload();
-          void setup();
-
           void quitWindow();
 
           void update();

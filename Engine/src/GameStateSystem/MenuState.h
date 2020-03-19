@@ -18,7 +18,7 @@ namespace statesystem
 		void init();
 
 	public:
-		MenuState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys);
+		MenuState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys, std::stack<State*>* _states);
 		virtual ~MenuState();
 
 

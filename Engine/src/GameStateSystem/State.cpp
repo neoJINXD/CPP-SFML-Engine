@@ -1,10 +1,11 @@
 #include "State.h"
 
-statesystem::State::State(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys)
+statesystem::State::State(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys, std::stack<State*>* _states)
 {
 	win = _win;
 	ended = false;
 	validKeys = _validKeys;
+	states = _states;
 
 }
 
