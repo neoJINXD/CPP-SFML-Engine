@@ -148,6 +148,7 @@
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\GameStateSystem\State.cpp" />
+    <ClCompile Include="src\Utilities\Helpers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\UI\Button.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="src\GameStateSystem\GameState.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\GameStateSystem\State.h" />
+    <ClInclude Include="src\Utilities\Helpers.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="resources\fonts\Blacklisted.ttf" />
