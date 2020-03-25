@@ -85,3 +85,10 @@ void ui::Button::render(sf::RenderTarget* target)
 	target->draw(button);
 	target->draw(txt);
 }
+
+void ui::Button::setTransparent()
+{
+	normal = sf::Color(100, 100, 100, 100);
+	highlighted = sf::Color(201, 201, 201, 100);
+	click = sf::Color(20, 20, 20, 100);
+}

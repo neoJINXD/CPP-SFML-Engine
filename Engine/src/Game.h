@@ -23,7 +23,7 @@ namespace engine
     private:
           const int HEIGHT = 1280;
           const int WIDTH = 720;
-          const sf::Color background = sf::Color::Cyan;
+          const sf::Color background = sf::Color::Black;
 
           sf::RenderWindow *win;
           sf::Event pollingEvnt;

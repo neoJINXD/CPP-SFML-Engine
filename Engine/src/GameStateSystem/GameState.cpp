@@ -1,5 +1,6 @@
 #include "GameState.h"
 #include <stdio.h>
+#include "EndState.h"
 
 void statesystem::GameState::initKeybinds()
 {
@@ -8,6 +9,7 @@ void statesystem::GameState::initKeybinds()
 	keybinds["MOVE_LEFT"] = validKeys->at("A");
 	keybinds["MOVE_DOWN"] = validKeys->at("S");
 	keybinds["MOVE_RIGHT"] = validKeys->at("D");
+	keybinds["END"] = validKeys->at("P");
 
 }
 
@@ -32,6 +34,8 @@ void statesystem::GameState::updateInputs(const float& dt)
 		player.move(dt, 0.f, -1.f);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("MOVE_DOWN"))))
 		player.move(dt, 0.f, 1.f);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("END"))))
+		states->push(new statesystem::EndState(win, validKeys, states));
 
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		printf("Left mouse\n");

@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\GameStateSystem\EndState.cpp" />
     <ClCompile Include="src\UI\Button.cpp" />
     <ClCompile Include="src\GameStateSystem\MenuState.cpp" />
     <ClCompile Include="src\Entities\Entity.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="src\Utilities\Helpers.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\GameStateSystem\EndState.h" />
     <ClInclude Include="src\UI\Button.h" />
     <ClInclude Include="src\GameStateSystem\MenuState.h" />
     <ClInclude Include="src\Entities\Entity.h" />
