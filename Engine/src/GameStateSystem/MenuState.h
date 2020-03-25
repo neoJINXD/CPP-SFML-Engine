@@ -6,6 +6,7 @@
 
 #include "State.h"
 #include "../UI/Button.h"
+#include "../UI/Text.h"
 
 namespace statesystem
 {
@@ -16,6 +17,7 @@ namespace statesystem
 		sf::RectangleShape bgd;
 		sf::Font font;
 		std::map<std::string, ui::Button*> buttons;
+		std::map<std::string, ui::Text*> texts;
 
 		//ui::Button* testBTN;
 

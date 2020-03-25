@@ -150,6 +150,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\GameStateSystem\State.cpp" />
     <ClCompile Include="src\Utilities\Helpers.cpp" />
+    <ClCompile Include="src\UI\Text.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\GameStateSystem\EndState.h" />
@@ -159,7 +160,9 @@
     <ClInclude Include="src\GameStateSystem\GameState.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\GameStateSystem\State.h" />
+    <ClInclude Include="src\UI\UI.h" />
     <ClInclude Include="src\Utilities\Helpers.h" />
+    <ClInclude Include="src\UI\Text.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="resources\fonts\Blacklisted.ttf" />

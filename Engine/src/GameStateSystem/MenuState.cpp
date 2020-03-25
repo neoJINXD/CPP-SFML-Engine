@@ -20,11 +20,16 @@ void statesystem::MenuState::init()
 		exit(-1);
 	}
 
+	//button initialization
 	buttons["TEST"] = new ui::Button(100, 100, 1150, 50, &font, "Test");
 	buttons["TEST"]->setTransparent();
 	float middle = win->getSize().x / 2.f;
 	buttons["EXIT"] = new ui::Button(middle, 650, 150, 50, &font, "EXIT", ui::CENTER);
 	buttons["PLAY"] = new ui::Button(middle, 590, 250, 50, &font, "Enter the Game", ui::CENTER);
+	
+	//text initializations
+	texts["TITLE"] = new ui::Text(middle, 300, "Title", &font, ui::CENTER);
+	texts["TITLE"]->setColor(sf::Color::White);
 }
 
 statesystem::MenuState::MenuState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys, std::stack<State*>* _states) : State(_win, _validKeys, _states)
@@ -40,6 +45,10 @@ statesystem::MenuState::~MenuState()
 {
 
 	for (auto &i : buttons)
+	{
+		delete i.second;
+	}
+	for (auto& i : texts)
 	{
 		delete i.second;
 	}
@@ -93,6 +102,10 @@ void statesystem::MenuState::render(sf::RenderTarget* target)
 		target = win;
 	//target->draw(bgd);
 	for (auto &i : buttons)
+	{
+		i.second->render(target);
+	}
+	for (auto& i : texts)
 	{
 		i.second->render(target);
 	}
