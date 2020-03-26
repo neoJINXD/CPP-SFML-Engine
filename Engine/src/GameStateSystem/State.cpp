@@ -7,6 +7,12 @@ statesystem::State::State(sf::RenderWindow* _win, std::map<std::string, int>* _v
 	validKeys = _validKeys;
 	states = _states;
 
+	if (!font.loadFromFile("resources/fonts/Blacklisted.ttf"))
+	{
+		printf("ERROR::Stat - FAILED TO LOAD FONT");
+		exit(-1);
+	}
+
 }
 
 statesystem::State::~State()

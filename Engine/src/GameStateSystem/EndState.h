@@ -1,7 +1,6 @@
 #pragma once
 
 #include "State.h"
-#include "../UI/Button.h"
 
 namespace statesystem
 {
@@ -10,8 +9,6 @@ namespace statesystem
 	{
 	private:
 		sf::RectangleShape bgd;
-		sf::Font font;
-		std::map<std::string, ui::Button*> buttons;
 
 		void initKeybinds();
 		void init();

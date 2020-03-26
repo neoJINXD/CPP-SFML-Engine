@@ -14,11 +14,6 @@ void statesystem::MenuState::initKeybinds()
 
 void statesystem::MenuState::init()
 {
-	if (!font.loadFromFile("resources/fonts/Blacklisted.ttf"))
-	{
-		printf("ERROR::MENUSTATE - FAILED TO LOAD FONT");
-		exit(-1);
-	}
 
 	//button initialization
 	buttons["TEST"] = new ui::Button(100, 100, 1150, 50, &font, "Test");

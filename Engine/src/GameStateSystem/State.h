@@ -8,6 +8,8 @@
 #include <stack>
 #include <SFML/Graphics.hpp>
 #include "../Entities/Entity.h"
+#include "../UI/Button.h"
+#include "../UI/Text.h"
 
 namespace statesystem 
 {
@@ -16,6 +18,11 @@ namespace statesystem
 	private:
 
 	protected:
+		sf::Font font;
+
+		std::map<std::string, ui::Button*> buttons;
+		std::map<std::string, ui::Text*> texts;
+
 		std::stack<State*>* states;
 		bool ended;
 		sf::RenderWindow* win;
