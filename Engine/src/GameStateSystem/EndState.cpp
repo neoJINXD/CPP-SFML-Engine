@@ -8,7 +8,13 @@ void statesystem::EndState::initKeybinds()
 void statesystem::EndState::init()
 {
 	float middle = win->getSize().x / 2.f;
+
+	//button initializations
 	buttons["EXIT"] = new ui::Button(middle, 650, 150, 50, &font, "EXIT", ui::CENTER);
+
+	//text initializations
+	texts["TITLE"] = new ui::Text(middle, 300, "This is the End Screen", &font, ui::CENTER);
+	texts["TITLE"]->setColor(sf::Color::White);
 }
 
 statesystem::EndState::EndState(sf::RenderWindow* _win, std::map<std::string, int>* _validKeys, std::stack<State*>* _states) : State(_win, _validKeys, _states)
@@ -23,6 +29,10 @@ statesystem::EndState::EndState(sf::RenderWindow* _win, std::map<std::string, in
 statesystem::EndState::~EndState()
 {
 	for (auto& i : buttons)
+	{
+		delete i.second;
+	}
+	for (auto& i : texts)
 	{
 		delete i.second;
 	}
@@ -74,6 +84,10 @@ void statesystem::EndState::render(sf::RenderTarget* target)
 		target = win;
 	//target->draw(bgd);
 	for (auto& i : buttons)
+	{
+		i.second->render(target);
+	}
+	for (auto& i : texts)
 	{
 		i.second->render(target);
 	}

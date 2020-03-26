@@ -14,16 +14,16 @@ void statesystem::MenuState::initKeybinds()
 
 void statesystem::MenuState::init()
 {
+	float middle = win->getSize().x / 2.f;
 
-	//button initialization
+	//button initializations
 	buttons["TEST"] = new ui::Button(100, 100, 1150, 50, &font, "Test");
 	buttons["TEST"]->setTransparent();
-	float middle = win->getSize().x / 2.f;
 	buttons["EXIT"] = new ui::Button(middle, 650, 150, 50, &font, "EXIT", ui::CENTER);
 	buttons["PLAY"] = new ui::Button(middle, 590, 250, 50, &font, "Enter the Game", ui::CENTER);
 	
 	//text initializations
-	texts["TITLE"] = new ui::Text(middle, 300, "Title", &font, ui::CENTER);
+	texts["TITLE"] = new ui::Text(middle, 300, "This is the Title Screen", &font, ui::CENTER);
 	texts["TITLE"]->setColor(sf::Color::White);
 }
 
