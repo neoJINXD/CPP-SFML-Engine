@@ -27,7 +27,10 @@ const bool& statesystem::State::getEnd() const
 void statesystem::State::checkEnd()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("CLOSE"))))
-		ended = true;
+	{
+		//ended = true;
+		killGame();
+	}
 }
 
 void statesystem::State::updateMousePos()
@@ -35,5 +38,10 @@ void statesystem::State::updateMousePos()
 	mousePosScreen = sf::Mouse::getPosition();
 	mousePosWindow = sf::Mouse::getPosition(*win);
 	mousePosView = win->mapPixelToCoords(sf::Mouse::getPosition(*win));
+}
+
+void statesystem::State::killGame()
+{
+	win->close();
 }
 
